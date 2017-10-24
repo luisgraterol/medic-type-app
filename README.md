@@ -1,5 +1,7 @@
 ## Guía de Trabajo - Medic Type App
 
+Creado por Manuel Ojeda, Luis Graterol y Santiago Lossada.
+
 ### Referencias:
 ##### 1. Guías para aprender sobre Git y Github:
 * [Github Guides: Forking Projects](https://guides.github.com/activities/forking/)  <-- Para colaborar con un GUI
