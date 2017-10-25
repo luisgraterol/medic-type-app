@@ -44,38 +44,22 @@ app.use((req, res, next) => {
 app.use(express.static(__dirname + '/public'));
 
 
+var nombreP;
 
-
-
-
-
-
-
-// var nombreP;
-//
-// connection.query('SELECT * FROM TABLE Paciente', (error, results) => {
-//   if (error) {
-//     console.log(error);
-//   };
-//   // YOUR CODE HERE
-//
-//   nombreP = results[1];
-//
-//   console.log('The solution is: ', results);
-// });
-
-
-
-
-
-
-
+connection.query('SELECT * FROM Paciente WHERE idPaciente=1', (error, results) => {
+  if (error) {
+    console.log(error);
+  };
+  // console.log('The solution is:\n', results[0].nombre);
+  nombreP = results[0].nombre;
+});
 
 
 // Get Requests:
 app.get('/', (req, res) => {
   res.render('home.hbs', {
-    pageTitle: 'Home Page'
+    pageTitle: 'Home Page',
+    nombrePaciente: nombreP
   });
 });
 
