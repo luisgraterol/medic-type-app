@@ -43,9 +43,8 @@ app.use((req, res, next) => {
 
 app.use(express.static(__dirname + '/public'));
 
-
+// Ejemplo de Query:
 var nombreP;
-
 connection.query('SELECT * FROM Paciente WHERE idPaciente=1', (error, results) => {
   if (error) {
     console.log(error);
