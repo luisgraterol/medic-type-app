@@ -4,15 +4,16 @@ const fs = require('fs');
 const mysql = require('mysql');
 
 
-// Coneccion a la Base de Datos:
-var db = mysql.createConnection({
+// Crear la coneccion a la base de :
+var connection = mysql.createConnection({
   host: 'localhost',
   user: 'root',
   password: 'password',
   database: 'MedicTypeDB'
 });
 
-db.connect((err) => {
+// Conectar a la base de datos:
+connection.connect((err) => {
   if (err) {
      console.log(err);
   }
@@ -24,8 +25,6 @@ var app = express();
 
 hbs.registerPartials(__dirname + '/views/partials');
 app.set('view engine', 'hbs');
-
-console.log('Hello World!');
 
 
 // Middleware:
@@ -43,6 +42,33 @@ app.use((req, res, next) => {
 });
 
 app.use(express.static(__dirname + '/public'));
+
+
+
+
+
+
+
+
+
+// var nombreP;
+//
+// connection.query('SELECT * FROM TABLE Paciente', (error, results) => {
+//   if (error) {
+//     console.log(error);
+//   };
+//   // YOUR CODE HERE
+//
+//   nombreP = results[1];
+//
+//   console.log('The solution is: ', results);
+// });
+
+
+
+
+
+
 
 
 
